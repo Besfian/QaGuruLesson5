@@ -10,7 +10,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
 public class RegistrationsPage {
-    public final String URL = "https://demoqa.com/automation-practice-form";
+    private final String URL = "https://demoqa.com/automation-practice-form";
     private final String FORM_TEXT = "Student Registration Form";
     private final String MODAL_TEXT = "Thanks for submitting the form";
     private SelenideElement
