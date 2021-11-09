@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.sleep;
-
 
 public class MyTextBoxTests {
     @BeforeAll
@@ -49,8 +47,6 @@ public class MyTextBoxTests {
                 .checkResults("Picture", "Test.jpg")
                 .checkResults("Address", faker.address)
                 .checkResults("State and City", "NCR Delhi");
-
-sleep(5000);
     }
 
 

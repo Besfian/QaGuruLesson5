@@ -15,7 +15,6 @@ public class RegistrationsPage {
     private final String MODAL_TEXT = "Thanks for submitting the form";
     private SelenideElement
             formTitle = $(".practice-form-wrapper"),
-            modalTitle = $("#example-modal-sizes-title-lg"),
             formFirstNameInput = $("#firstName"),
             formLastNameInput = $("#lastName"),
             formEmailInput = $("#userEmail"),
