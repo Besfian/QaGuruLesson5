@@ -75,13 +75,13 @@ public class RegistrationsPage {
 
     public RegistrationsPage typeGenderInput(String gender) {
         switch (gender) {
-            case "MALE":
+            case "Male":
                 $("[for='gender-radio-1']").click();
                 break;
-            case "FEMALE":
+            case "Female":
                 $("[for='gender-radio-2']").click();
                 break;
-            case "OTHER":
+            case "Other":
                 $("[for='gender-radio-3']").click();
                 break;
         }
@@ -118,7 +118,6 @@ public class RegistrationsPage {
     }
 
     RegistrationsPage checkResults(String key, String meaning) {
-        String meaning1 = meaning;
         $(".table-responsive").$(byText(key)).parent().shouldHave(text(meaning));
         return this;
     }
