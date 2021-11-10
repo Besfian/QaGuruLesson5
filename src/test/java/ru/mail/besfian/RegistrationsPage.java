@@ -35,27 +35,27 @@ public class RegistrationsPage {
         return this;
     }
 
-    public RegistrationsPage typeFirstNameInput(String firstName) {
+    public RegistrationsPage typeFirstName(String firstName) {
         formFirstNameInput.setValue(firstName);
         return this;
     }
 
-    public RegistrationsPage typeLastNameInput(String lastName) {
+    public RegistrationsPage typeLastName(String lastName) {
         formLastNameInput.setValue(lastName);
         return this;
     }
 
-    public RegistrationsPage typeEmailInput(String email) {
+    public RegistrationsPage typeEmail(String email) {
         formEmailInput.setValue(email);
         return this;
     }
 
-    public RegistrationsPage typeUserNumberInput(String userNumber) {
+    public RegistrationsPage typeUserNumber(String userNumber) {
         formUserNumberInput.setValue(userNumber);
         return this;
     }
 
-    public RegistrationsPage typeDateOfBirthInput(String year, String month, String day) {
+    public RegistrationsPage typeDateOfBirth(String year, String month, String day) {
         formDateOfBirthInput.click();
         $(".react-datepicker__year-select").click();
         $(byText(year)).click();
@@ -65,14 +65,14 @@ public class RegistrationsPage {
         return this;
     }
 
-    public RegistrationsPage typeHobbiesInput(List hobbies) {
+    public RegistrationsPage typeHobbies(List hobbies) {
         for (int index = 0; index < hobbies.size(); index++) {
             $(byText(String.valueOf((hobbies.get(index))))).click();
         }
         return this;
     }
 
-    public RegistrationsPage typeGenderInput(String gender) {
+    public RegistrationsPage chooseGender(String gender) {
         switch (gender) {
             case "Male":
                 $("[for='gender-radio-1']").click();
@@ -87,25 +87,28 @@ public class RegistrationsPage {
         return this;
     }
 
-    public RegistrationsPage typeSubjectsInput(String subjects, String fullSubjects) {
+    public RegistrationsPage typeSubjects(String subjects, String fullSubjects) {
         formSubjectsInput.sendKeys(subjects);
         $(byText(fullSubjects)).click();
         return this;
     }
 
-    public RegistrationsPage typePictureInput(String picture) {
+    public RegistrationsPage loadPicture(String picture) {
         formUploadPictureInput.uploadFromClasspath(picture);
         return this;
     }
 
-    public RegistrationsPage typeAddressInput(String address) {
+    public RegistrationsPage typeAddress(String address) {
         formCurrentAddressInput.setValue(address);
         return this;
     }
 
-    public RegistrationsPage typeStateAndCityInput(String state, String city) {
+    public RegistrationsPage typeState(String state) {
         $(byText("Select State")).scrollTo().click();
         $(byText(state)).click();
+        return this;
+    }
+    public RegistrationsPage typeCity(String city) {
         $(byText("Select City")).click();
         $(byText(city)).click();
         return this;

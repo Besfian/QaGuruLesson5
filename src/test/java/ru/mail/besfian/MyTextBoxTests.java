@@ -18,24 +18,25 @@ public class MyTextBoxTests {
     void formTest() {
         StudentData faker = new StudentData();
         RegistrationsPage registrationsPage = new RegistrationsPage();
-        List hobbies = new ArrayList();
+        List <String> hobbies = new ArrayList();
         hobbies.add("Sports");
         hobbies.add("Reading");
         hobbies.add("Music");
 
         registrationsPage.openPage()
                 .validateFormTitle()
-                .typeFirstNameInput(faker.firstName)
-                .typeLastNameInput(faker.lastName)
-                .typeEmailInput(faker.userEmail)
-                .typeGenderInput(faker.gender)
-                .typeUserNumberInput(faker.userNumber)
-                .typeDateOfBirthInput(faker.yearOfBirthInput, faker.monthOfBirthInput, faker.dayOfBirthInput)
-                .typeHobbiesInput(hobbies)
-                .typeSubjectsInput("e", "English")
-                .typePictureInput("Test.jpg")
-                .typeAddressInput(faker.address)
-                .typeStateAndCityInput("NCR", "Delhi")
+                .typeFirstName(faker.firstName)
+                .typeLastName(faker.lastName)
+                .typeEmail(faker.userEmail)
+                .chooseGender(faker.gender)
+                .typeUserNumber(faker.userNumber)
+                .typeDateOfBirth(faker.yearOfBirthInput, faker.monthOfBirthInput, faker.dayOfBirthInput)
+                .typeHobbies(hobbies)
+                .typeSubjects("e", "English")
+                .loadPicture("Test.jpg")
+                .typeAddress(faker.address)
+                .typeState("NCR")
+                .typeCity( "Delhi")
                 .submitClick()
                 .checkResults("Student Name", faker.firstName + " " + faker.lastName)
                 .checkResults("Student Email", faker.userEmail)
